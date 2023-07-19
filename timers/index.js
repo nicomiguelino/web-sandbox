@@ -13,7 +13,17 @@ console.log('firing up timer/s')
 
 
 // Another setInterval example.
-setInterval(function hello() {
-  console.log('Another setInterval example...')
-  return hello
-}(), 3000)
+// setInterval(function hello() {
+//   console.log('Another setInterval example...')
+//   return hello
+// }(), 3000)
+
+// Another setInterval example.
+setInterval((() => {
+  const lambda = () => {
+    console.log('Yet another setInterval example...')
+  }
+  lambda()
+
+  return lambda
+})(), 3000)
