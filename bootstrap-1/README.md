@@ -4,4 +4,4 @@
 
 ## Screenshot
 
-![bootstrap-demo](bootstrap-1/bootstrap-demo.png)
+![bootstrap-demo](/bootstrap-1/bootstrap-demo.png)
