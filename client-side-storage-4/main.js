@@ -64,18 +64,28 @@ class AppCache {
   }
 
   displayData() {
+    console.log('Called displayData()...')
     const objectStore = this.db
       .transaction(this.storeName)
       .objectStore(this.storeName)
-    objectStore.openCursor().addEventListener('success', (e) => {
-      console.log('Called `openCursor()`')
-      const cursor = e.target.result
-      if (cursor) {
-        cursor.continue()
-      } else {
-        console.log('No more entries')
-      }
+    const request = objectStore.getAll()
+
+    request.addEventListener('success', () => {
+      console.log(typeof request.result)
+      console.log(request.result)
     })
+
+    // NOTE: Alternative implementation using a cursor.
+    // objectStore.openCursor().addEventListener('success', (e) => {
+    //   const cursor = e.target.result
+    //   const encoded = JSON.stringify(cursor.value, null, 2)
+    //   console.log(encoded)
+    //   if (cursor) {
+    //     cursor.continue()
+    //   } else {
+    //     console.log('No more entries')
+    //   }
+    // })
   }
 
   clearData() {
@@ -86,6 +96,27 @@ class AppCache {
   }
 }
 
+const seedData = [
+  {
+    title: "Last year's heatwave to be regarded as 'cool' by end of century",
+    pubDate: "July 26, 2023, 4:05 PM",
+    content: "Lorem ipsum dolor sit amet.",
+    contentSnippet: "Lorem ipsum dolor sit amet."
+  },
+  {
+    title: "Sinead O'Connor: Tributes flow for Irish singer dead at 56",
+    pubDate: "July 26, 2023, 10:53 PM",
+    content: "Lorem ipsum dolor sit amet.",
+    contentSnippet: "Lorem ipsum dolor sit amet."
+  },
+  {
+    title: "Record British Gas profit after energy bill change",
+    pubDate: "July 26, 2023, 11:55 PM",
+    content: "Lorem ipsum dolor sit amet.",
+    contentSnippet: "Lorem ipsum dolor sit amet."
+  }
+]
+
 const main = () => {
   const appCache = new AppCache({
     dbName: 'rssCache',
@@ -95,18 +126,8 @@ const main = () => {
   appCache.openRequest.addEventListener('success', () => {
     appCache.clearData()
 
-    appCache.addData({
-      title: 'Test title',
-      pubDate: 'Test pubDate',
-      content: 'Test content',
-      contentSnippet: 'Test contentSnippet'
-    })
-
-    appCache.addData({
-      title: 'Test title 2',
-      pubDate: 'Test pubDate 2',
-      content: 'Test content 2',
-      contentSnippet: 'Test contentSnippet 2'
+    seedData.forEach(data => {
+      appCache.addData(data)
     })
 
     appCache.displayData()
