@@ -1,0 +1,100 @@
+@media screen
+  and (min-width: 800px)
+  and (orientation: landscape)
+{
+  body {
+    /* Set background color to pastel red. */
+    background-color: #ff6666;
+  }
+}
+
+@media screen
+  and (min-width: 1280px)
+  and (orientation: landscape)
+{
+  body {
+    /* Set background color to pastel orange. */
+    background-color: #ffcc66;
+  }
+}
+
+@media screen
+  and (min-width: 1920px)
+  and (orientation: landscape)
+{
+  body {
+    /* Set background color to pastel yellow. */
+    background-color: #ffff66;
+  }
+}
+
+@media screen
+  and (min-width: 3840px)
+  and (orientation: landscape)
+{
+  body {
+    /* Set background color to pastel green. */
+    background-color: #66ff66;
+  }
+}
+
+@media screen
+  and (min-width: 4096px)
+  and (orientation: landscape)
+{
+  body {
+    /* Set background color to pastel blue. */
+    background-color: #66ffff;
+  }
+}
+
+/* This media query doesn't work. */
+@media screen
+  and (orientation: portrait)
+  and (max-width: 481px)
+{
+  body {
+    /* Set background color to pastel magenta. */
+    background-color: #ff66ff;
+  }
+}
+
+@media screen
+  and (min-width: 720px)
+  and (orientation: portrait)
+{
+  body {
+    /* Set background color to pastel blue. */
+    background-color: #66ffff;
+  }
+}
+
+@media screen
+  and (min-width: 1080px)
+  and (orientation: portrait)
+{
+  body {
+    /* Set background color to pastel green. */
+    background-color: #66ff66;
+  }
+}
+
+@media screen
+  and (min-width: 1920px)
+  and (orientation: portrait)
+{
+  body {
+    /* Set background color to pastel yellow. */
+    background-color: #ffff66;
+  }
+}
+
+@media screen
+  and (min-width: 2160px)
+  and (orientation: portrait)
+{
+  body {
+    /* Set background color to pastel pink. */
+    background-color: #ff6666;
+  }
+}
