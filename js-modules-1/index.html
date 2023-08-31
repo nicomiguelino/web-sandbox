@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Modules Tutorial</title>
+</head>
+<body>
+  <h1>JavaScript Modules</h1>
+
+  <div class="container"></div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "shapes/square.js": "./static/js/modules/square.js",
+        "shapes/circle.js": "./static/js/modules/circle.js",
+        "shapes/shape.js": "./static/js/modules/shape.js"
+      }
+    }
+  </script>
+  <script type="module" src="static/js/main.js"></script>
+</body>
+</html>
