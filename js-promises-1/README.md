@@ -1,0 +1,3 @@
+# JavaScript Promises
+
+This project makes use of Promises...
