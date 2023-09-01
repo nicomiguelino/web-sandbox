@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alpine.js Demo</title>
+</head>
+<body>
+  <div x-data="{ open: false }">
+    <button @click="open = !open">Expand</button>
+
+    <span x-show="open">
+      Content...
+    </span>
+  </div>
+
+  <script src="static/js/lib/alpine-3.13.0.min.js"></script>
+  <script src="static/js/index.js"></script>
+</body>
+</html>
