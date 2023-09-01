@@ -5,10 +5,12 @@
   <title>Alpine.js Demo</title>
   <script src="static/js/lib/alpine-3.13.0.min.js" defer></script>
 </head>
+
 <body>
   <h1 x-data="getMessage()" x-text="message"></h1>
 
   This section shows what Alpine.js can do.
+
 
   <h1>Building a counter</h1>
 
@@ -21,6 +23,16 @@
     <div x-data="getCount(offset)">
       <button @click="increment">Increment</button>
       <span x-text="count"></span>
+    </div>
+  </div>
+
+
+  <h1>Building a dropdown</h1>
+
+  <div x-data="{ open: false }">
+    <button @click="open = !open">Toggle</button>
+    <div x-show="open" @click.outside="open = false">
+      Contents...
     </div>
   </div>
 
