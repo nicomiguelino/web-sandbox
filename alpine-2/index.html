@@ -12,14 +12,14 @@
 
   <h1>Building a counter</h1>
 
-  <div x-data="getCount()">
-    <button x-on:click="increment">Increment</button>
-    <span x-text="count"></span>
+  <div x-data="getCount(2)">
+    <button @click="increment">Increment</button>
+    <span x-text="count * 2"></span>
   </div>
 
   <div x-data="{ offset: 3 }">
     <div x-data="getCount(offset)">
-      <button x-on:click="increment">Increment</button>
+      <button @click="increment">Increment</button>
       <span x-text="count"></span>
     </div>
   </div>
