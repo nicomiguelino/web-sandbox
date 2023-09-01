@@ -14,4 +14,18 @@ const getCount = (n = 1) => {
 };
 
 window.onload = function() {
+  const store = {
+    _count: 0,
+    get count() {
+      return this._count;
+    },
+    set count(x) {
+      this._count = x;
+    },
+  };
+
+  console.log(store.count);
+
+  store.count = 12;
+  console.log(store.count);
 };
