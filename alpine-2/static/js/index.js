@@ -13,7 +13,7 @@ const getCount = (n = 1) => {
   };
 };
 
-window.onload = function() {
+window.onload = () => {
   const store = {
     _count: 0,
     get count() {
