@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Alpine.js Demo</title>
+  <script src="static/js/lib/alpine-3.13.0.min.js" defer></script>
 </head>
 <body>
-  <div x-data="{ open: false }">
-    <button @click="open = !open">Expand</button>
+  <h1 x-data="getMessage()" x-text="message"></h1>
 
-    <span x-show="open">
-      Content...
-    </span>
+  This section shows what Alpine.js can do.
+
+  <h1>Building a counter</h1>
+
+  <div x-data="getCount()">
+    <button x-on:click="increment">Increment</button>
+    <span x-text="count"></span>
   </div>
 
-  <script src="static/js/lib/alpine-3.13.0.min.js"></script>
+  <div x-data="{ offset: 3 }">
+    <div x-data="getCount(offset)">
+      <button x-on:click="increment">Increment</button>
+      <span x-text="count"></span>
+    </div>
+  </div>
+
   <script src="static/js/index.js"></script>
 </body>
 </html>
