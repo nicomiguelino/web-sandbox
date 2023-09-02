@@ -63,6 +63,12 @@
     </template>
   </div>
 
+  <h1>Encapsulating directives with <code>x-bind</code></h1>
+
+  <div x-data="{ 'value': 'first' }">
+    <button x-data="encapsulation" x-bind="handler">Weee!</button>
+  </div>
+
   <script src="static/js/index.js"></script>
 </body>
 </html>

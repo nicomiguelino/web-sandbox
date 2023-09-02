@@ -45,4 +45,16 @@ document.addEventListener("alpine:init", () => {
       console.log(`Setting current to ${text}`);
     }
   });
+
+  Alpine.data("encapsulation", () => {
+    return {
+      handler: {
+        ['@click'](value) {
+          console.log("I'm encapsulated!");
+          console.log(value);
+          console.log(typeof value);
+        }
+      }
+    };
+  });
 });
