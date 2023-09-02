@@ -48,6 +48,21 @@
       </template>
     </ul>
   </div>
+
+  <h1>Global states</h1>
+
+  <div x-data>
+    <template x-for="tab in $store.tabs.items">
+      <h3 x-text="tab"></h3>
+    </template>
+  </div>
+
+  <div x-data>
+    <template x-for="tab in $store.tabs.items">
+      <button x-text="tab" @click="$store.tabs.setCurrent(tab)"></button>
+    </template>
+  </div>
+
   <script src="static/js/index.js"></script>
 </body>
 </html>

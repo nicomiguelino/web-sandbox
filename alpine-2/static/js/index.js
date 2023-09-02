@@ -37,4 +37,12 @@ document.addEventListener("alpine:init", () => {
       }
     };
   });
+
+  Alpine.store("tabs", {
+    current: "first",
+    items: ["first", "second", "third"],
+    setCurrent(text) {
+      console.log(`Setting current to ${text}`);
+    }
+  });
 });
