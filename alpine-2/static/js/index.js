@@ -13,6 +13,30 @@ const getCount = (n = 1) => {
   };
 };
 
+const getSearchData = () => {
+  return {
+    search: "",
+    items: [
+      "Turtwig",
+      "Grotle",
+      "Torterra",
+      "Chimchar",
+      "Monferno",
+      "Infernape",
+      "Piplup",
+      "Prinplup",
+      "Empoleon",
+      "Starly",
+      "Staravia",
+      "Staraptor",
+    ],
+    get filteredItems() {
+      const fuse = new Fuse(this.items);
+      return fuse.search(this.search).map(({ item }) => item);
+    }
+  };
+};
+
 window.onload = () => {
   const store = {
     _count: 0,
