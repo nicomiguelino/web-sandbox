@@ -1,0 +1,40 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #505050;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  scale: 1.5;
+}
+
+.container h1 {
+  margin-bottom: 2.5rem;
+}
+
+.loader {
+  border: 16px solid #f49ac2;
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
