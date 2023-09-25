@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alpine.js Demo</title>
+  <script src="static/js/lib/alpine-3.13.0.min.js" defer></script>
+  <link rel="stylesheet" href="static/styles/main.css">
+</head>
+
+<body x-data="getMessage" :class="bgClass">
+  <div class="container">
+    <h1 x-text="message"></h1>
+  </div>
+
+  <script src="static/js/index.js"></script>
+</body>
+</html>
